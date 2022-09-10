@@ -1,0 +1,30 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="main_content_div">
+
+    <div class="upper_div">
+      <img src="assets/imgs/logo.png" class="logo">
+      <ion-label class="top_lbl">Login for a seamless experience</ion-label>
+
+      <ion-input type="text" placeholder="Username"></ion-input>
+      <ion-input type="password" placeholder="Password"></ion-input>
+
+      <div class="fab_div">
+        <ion-fab slot="fixed">
+          <ion-fab-button>
+            <ion-icon name="arrow-forward-outline"></ion-icon>
+          </ion-fab-button>
+        </ion-fab>
+      </div>
+    </div>
+
+    <div class="lower_div">
+      <ion-label class="bottom_lbl" (click)="goToTabs()">Maybe Later</ion-label>
+    </div>
+  </div>
+</ion-content>

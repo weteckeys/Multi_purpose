@@ -1,0 +1,135 @@
+<ion-header>
+  <ion-toolbar>
+    <!-- <ion-buttons slot="start">
+      <ion-menu-button color="dark"></ion-menu-button>
+    </ion-buttons> -->
+
+    <ion-icon class="back" name="arrow-back-outline" (click)="goBack()"></ion-icon>
+
+    <ion-title>Movies Online</ion-title>
+
+    <ion-button (click)="openActionSheet()" slot="end" size="small" fill="clear">
+      <ion-icon name="ellipsis-vertical"></ion-icon>
+    </ion-button>
+
+    <ion-button slot="end" size="small" fill="clear">
+      <ion-icon name="arrow-redo-outline"></ion-icon>
+    </ion-button>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="main_content_div">
+
+    <div class="search_div">
+      <ion-input type="text" placeholder="Search">
+        <ion-icon name="search-outline"></ion-icon>
+      </ion-input>
+    </div>
+
+    <div class="search_div">
+      <div class="chips_div">
+        <div class="test">
+          <ion-icon name="funnel-outline"></ion-icon>
+        </div>
+        <div class="test" [class.active]="currentCat == item" *ngFor="let item of moviesCat; let i = index">
+          <ion-label class="chip" (click)="selectCat(item)">{{item}}</ion-label>
+          <ion-icon name="caret-down-outline"></ion-icon>
+        </div>
+      </div>
+    </div>
+
+    <div class="lower_div">
+
+      <div class="main_slider">
+        <div class="head_flex">
+          <ion-label class="head_lbl">Popular</ion-label>
+          <ion-label class="small_lbl" (click)="goToPopular()">View More</ion-label>
+        </div>
+
+        <div class="slider_class">
+          <ion-slides mode="ios" [options]="slideOpts">
+            <ion-slide *ngFor="let item of (movies | slice : 0: 7)" (click)="goToMovieDetail()">
+              <div class="image_div bg_image" [style.backgroundImage]="'url( '+ item.img +' )'">
+
+                <div class="white_div">
+                  <ion-icon name="thumbs-up-sharp"></ion-icon>
+                  <ion-label>{{item.per}}%</ion-label>
+                </div>
+
+              </div>
+            </ion-slide>
+          </ion-slides>
+        </div>
+      </div>
+
+      <div class="main_slider">
+        <div class="head_flex">
+          <ion-label class="head_lbl">Hindi</ion-label>
+          <ion-label class="small_lbl" (click)="goToPopular()">View More</ion-label>
+        </div>
+
+        <div class="slider_class">
+          <ion-slides mode="ios" [options]="slideOpts">
+            <ion-slide *ngFor="let item of (movies | slice : 7: 15)" (click)="goToMovieDetail()">
+              <div class="image_div bg_image" [style.backgroundImage]="'url( '+ item.img +' )'">
+
+                <div class="white_div">
+                  <ion-icon name="thumbs-up-sharp"></ion-icon>
+                  <ion-label>{{item.per}}%</ion-label>
+                </div>
+
+              </div>
+            </ion-slide>
+          </ion-slides>
+        </div>
+      </div>
+
+      <div class="main_slider">
+        <div class="head_flex">
+          <ion-label class="head_lbl">English</ion-label>
+          <ion-label class="small_lbl" (click)="goToPopular()">View More</ion-label>
+        </div>
+
+        <div class="slider_class">
+          <ion-slides mode="ios" [options]="slideOpts">
+            <ion-slide *ngFor="let item of (movies | slice : 11)" (click)="goToMovieDetail()">
+              <div class="image_div bg_image" [style.backgroundImage]="'url( '+ item.img +' )'">
+
+                <div class="white_div">
+                  <ion-icon name="thumbs-up-sharp"></ion-icon>
+                  <ion-label>{{item.per}}%</ion-label>
+                </div>
+
+              </div>
+            </ion-slide>
+          </ion-slides>
+        </div>
+      </div>
+
+      <div class="main_slider">
+        <div class="head_flex">
+          <ion-label class="head_lbl">Marathi</ion-label>
+          <ion-label class="small_lbl" (click)="goToPopular()">View More</ion-label>
+        </div>
+
+        <div class="slider_class">
+          <ion-slides mode="ios" [options]="slideOpts">
+            <ion-slide *ngFor="let item of (movies | slice : 5: 14)" (click)="goToMovieDetail()">
+              <div class="image_div bg_image" [style.backgroundImage]="'url( '+ item.img +' )'">
+
+                <div class="white_div">
+                  <ion-icon name="thumbs-up-sharp"></ion-icon>
+                  <ion-label>{{item.per}} %</ion-label>
+                </div>
+
+              </div>
+            </ion-slide>
+          </ion-slides>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</ion-content>

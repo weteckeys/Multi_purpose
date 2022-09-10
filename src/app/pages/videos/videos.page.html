@@ -1,0 +1,153 @@
+<ion-header>
+  <ion-toolbar *ngIf="currentCat != 'Videos'">
+    <ion-buttons slot="start">
+      <ion-menu-button color="dark"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Videos</ion-title>
+
+    <ion-button slot="end" size="small" fill="clear">
+      <ion-icon name="search-outline"></ion-icon>
+    </ion-button>
+
+    <ion-button (click)="goToNotification()" slot="end" size="small" fill="clear">
+      <ion-icon name="notifications-outline"></ion-icon>
+    </ion-button>
+
+  </ion-toolbar>
+
+  <div class="header_div" *ngIf="currentCat == 'Videos'" [class.ios_pad]="plt == 'ios'">
+
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <img src="assets/imgs/logo.png" alt="">
+
+    <div class="btn_div">
+
+      <ion-button size="small" fill="clear">
+        <ion-icon name="arrow-redo-outline"></ion-icon>
+      </ion-button>
+
+      <ion-button size="small" fill="clear">
+        <ion-icon name="notifications-outline"></ion-icon>
+      </ion-button>
+
+    </div>
+
+  </div>
+
+</ion-header>
+
+<ion-content>
+  <div class="main_content_div">
+
+    <div class="search_div" *ngIf="currentCat == 'Videos'">
+      <ion-input type="text" placeholder="Search">
+        <ion-icon name="search-outline"></ion-icon>
+      </ion-input>
+    </div>
+
+    <div class="search_div" *ngIf="currentCat == 'Videos'">
+      <div class="chips_div">
+        <div class="test" [class.active]="currentCat == i" *ngFor="let item of moviesCat; let i = index">
+          <ion-label class="chip" (click)="selectCat(item)">{{item}}</ion-label>
+          <span class="line_span" *ngIf="currentCat == item"></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="story_div" *ngIf="currentCat != 'Videos'">
+      <div class="chips_div">
+
+        <div class="inner_div">
+          <div class="story_img_main">
+            <div class="fill_div">
+              <img src="assets/imgs/mystory.png" alt="">
+            </div>
+          </div>
+          <ion-label class="chip">For You</ion-label>
+        </div>
+
+        <div class="inner_div" *ngFor="let item of stories">
+          <div class="story_img bg_image" [style.backgroundImage]="'url('+ item.img +')'"></div>
+          <ion-label class="chip">{{item.name | slice : 0: 10}}</ion-label>
+        </div>
+      </div>
+    </div>
+
+    <div class="lang_div" *ngIf="currentCat == 'Videos'">
+      <div class="chips_div">
+        <div class="test" [class.active]="vCat == i" *ngFor="let item of videoCat; let i = index">
+          <ion-label class="chip" (click)="selectVideoCat(i)">{{item}}</ion-label>
+        </div>
+      </div>
+    </div>
+
+    <div class="lang_div" *ngIf="currentCat != 'Videos'">
+      <div class="chips_div">
+        <div class="test" [class.active]="currentLang == i" *ngFor="let item of lang; let i = index">
+          <ion-label class="chip" (click)="selectLang(i)">{{item}}</ion-label>
+        </div>
+      </div>
+    </div>
+
+    <div class="lower_div">
+
+      <div class="news_card" *ngFor="let item of videoList">
+
+        <div class="chip_div">
+          <div class="chip">
+            <div class="round"></div>
+            <ion-label>New News</ion-label>
+          </div>
+        </div>
+
+        <video playsinline webkit-playsinline autoplay>
+          <source src="{{item.video}}" type="video/mp4">
+        </video>
+
+        <div class="channel_detail">
+          <img src="{{item.logo}}">
+          <ion-label class="channel_name">The Times of India</ion-label> •
+          <ion-label class="follow_lbl">Follow</ion-label>
+        </div>
+
+        <ion-label class="head_line">{{item.headline}}</ion-label>
+
+        <div class="like_div">
+          <img src="assets/imgs/like.png">
+          <ion-label>12</ion-label>
+          <ion-label class="share_lbl">2 Share</ion-label>
+          <ion-label class="share_lbl">222 Views</ion-label>
+        </div>
+
+        <div class="share_div">
+          <div class="left_div">
+            <div class="round_div">
+              <ion-icon name="thumbs-up-outline"></ion-icon>
+            </div>
+            <div class="round_div">
+              <ion-icon name="chatbubble-outline"></ion-icon>
+            </div>
+            <div class="round_div" (click)="shareActionSheet()">
+              <ion-icon name="arrow-redo-outline"></ion-icon>
+            </div>
+          </div>
+          <div class="right_div">
+            <div class="round_div" style="margin-right: 0px;">
+              <ion-icon name="bookmark-outline"></ion-icon>
+            </div>
+            <ion-button (click)="presentActionSheet()" fill="clear" size="small">
+              <ion-icon name="ellipsis-vertical"></ion-icon>
+            </ion-button>
+          </div>
+        </div>
+
+        <ion-label class="link_lbl">10 minutes</ion-label>
+
+      </div>
+
+    </div>
+
+  </div>
+</ion-content>

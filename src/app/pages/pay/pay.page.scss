@@ -1,0 +1,94 @@
+.main_content_div{
+    width: 100%;
+
+    ion-label {
+        display: block;
+    }
+
+    .head_lbl {
+        font-weight: 500;
+        color: #505050;
+        margin-bottom: 10px;
+        font-size: 14px;
+    }
+
+    .story_div{
+        padding: 16px;
+        border-bottom: 1px solid lightgray;
+        
+        .chips_div{
+            display: flex;
+            flex-direction: row;
+            overflow: scroll;
+
+            .inner_div{
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                margin-right: 15px;
+                align-items: center;
+                justify-content: space-between;
+
+                .story_img{
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 100%;
+                    background: var(--ion-color-primary);
+                    position: relative;
+                    img{
+                        width: 23px;
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%,-50%);
+                    }
+                }
+            }
+
+            .chip{
+                white-space: nowrap;
+                color: #505050;
+                font-size: 12px;
+                margin-top: 10px;
+            }  
+        }
+    }
+    .travel_div{
+        padding: 16px;
+        border-bottom: 1px solid lightgray;
+        ion-grid{
+            padding: 0;
+
+            ion-col{
+                text-align: center;
+
+                .image_div{
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 100%;
+                    // box-shadow: 0px 3px 6px rgba(0,0,0,0.3);
+                    box-shadow: 0px 3px 6px rgba(17, 116, 192, 0.3);
+                    position: relative;
+                    display: block;
+                    margin: auto;
+
+                    img{
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%,-50%);
+                        width: 20px;
+                    }
+                }
+
+                .small_img{
+                    width: 40px;
+                }
+                ion-label {
+                    font-size: 12px;
+                    margin-top: 10px;
+                }
+            }
+        }
+    }
+}

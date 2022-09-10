@@ -1,0 +1,16 @@
+<ion-content>
+  <div class="main_content_div">
+
+    <ion-grid>
+      <ion-row>
+        <ion-col size="3" *ngFor="let item of moreCat" (click)="goToPage(item)">
+          <div class="inner_col">
+            <img src="{{item.img}}">
+            <ion-label>{{item.name}}</ion-label>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+  </div>
+</ion-content>

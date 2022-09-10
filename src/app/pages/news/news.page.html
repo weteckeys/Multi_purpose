@@ -1,0 +1,167 @@
+<ion-header>
+  <ion-toolbar *ngIf="category != 'News'">
+    <ion-buttons slot="start">
+      <ion-menu-button color="dark"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>News</ion-title>
+
+    <ion-button slot="end" size="small" fill="clear">
+      <ion-icon name="search-outline"></ion-icon>
+    </ion-button>
+
+    <ion-button (click)="goToNotification()" slot="end" size="small" fill="clear">
+      <ion-icon name="notifications-outline"></ion-icon>
+    </ion-button>
+
+  </ion-toolbar>
+
+  <div class="header_div" *ngIf="category == 'News'" [class.ios_pad]="plt == 'ios'">
+
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <img src="assets/imgs/logo.png" alt="">
+
+    <div class="btn_div">
+
+      <ion-button size="small" fill="clear">
+        <ion-icon name="arrow-redo-outline"></ion-icon>
+      </ion-button>
+
+      <ion-button size="small" fill="clear">
+        <ion-icon name="notifications-outline"></ion-icon>
+      </ion-button>
+
+    </div>
+
+  </div>
+
+</ion-header>
+
+<ion-content>
+
+  <div class="add_icon" (click)="goToLiveTv()">
+    <ion-label>Live TV</ion-label>
+  </div>
+
+  <div class="main_content_div">
+
+    <div class="search_div" *ngIf="category == 'News'">
+      <ion-input type="text" placeholder="Search">
+        <ion-icon name="search-outline"></ion-icon>
+      </ion-input>
+    </div>
+
+    <div class="search_div" *ngIf="category == 'News'">
+      <div class="chips_div">
+        <div class="test" [class.active]="currentCat == i" *ngFor="let item of moviesCat; let i = index">
+          <ion-label class="chip" (click)="selectCat(item)">{{item}}</ion-label>
+          <span class="line_span" *ngIf="currentCat == item"></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="story_div" *ngIf="category != 'News'">
+      <div class="chips_div">
+
+        <div class="inner_div">
+          <div class="story_img_main">
+            <div class="fill_div">
+              <img src="assets/imgs/mystory.png" alt="">
+            </div>
+          </div>
+          <ion-label class="chip">For You</ion-label>
+        </div>
+
+        <div class="inner_div" *ngFor="let item of stories">
+          <div class="story_img bg_image" [style.backgroundImage]="'url('+ item.img +')'"></div>
+          <ion-label class="chip">{{item.name | slice : 0: 10}}</ion-label>
+        </div>
+      </div>
+    </div>
+
+    <div class="lang_div" *ngIf="category != 'News'">
+      <div class="chips_div">
+        <div class="test" [class.active]="currentLang == i" *ngFor="let item of lang; let i = index">
+          <ion-label class="chip" (click)="selectLang(i)">{{item}}</ion-label>
+        </div>
+      </div>
+    </div>
+
+    <div class="lower_div">
+
+      <div class="news_card">
+
+        <div class="back_image bg_image" [style.backgroundImage]="'url(assets/imgs/news3.jpg)'"></div>
+
+        <div class="channel_detail">
+          <img src="assets/imgs/news_icn2.png">
+          <ion-label class="channel_name">The Times of India</ion-label>
+        </div>
+
+        <ion-label class="head_line">What is Lorem Ipsum, Lorem Ipsum is simply dummy text of the printing</ion-label>
+
+        <div class="share_div">
+          <div class="left_div">
+            <ion-label class="link_lbl">10 minutes</ion-label>
+          </div>
+          <div class="right_div">
+            <div class="round_div" style="margin-right: 0px;" (click)="shareActionSheet()">
+              <ion-icon name="arrow-redo-outline"></ion-icon>
+            </div>
+            <div class="round_div" style="margin-right: 0px;">
+              <ion-icon name="headset-outline"></ion-icon>
+            </div>
+            <div class="round_div" style="margin-right: 0px;">
+              <ion-icon name="document-text-outline" class="cpy"></ion-icon>
+            </div>
+            <div class="round_div" style="margin-right: 0px;" (click)="presentActionSheet()">
+              <ion-icon name="ellipsis-vertical"></ion-icon>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="news_card" *ngFor="let item of allNews">
+
+        <div class="flex_div">
+
+          <div class="detail_div">
+            <div class="channel_detail2">
+              <img src="{{item.logo}}">
+              <ion-label class="channel_name">The Times of India</ion-label>
+            </div>
+            <ion-label class="head_line2">{{item.headline}}</ion-label>
+          </div>
+
+          <div class="back_image2 bg_image" [style.backgroundImage]="'url('+ item.img +')'"></div>
+
+        </div>
+
+        <div class="share_div">
+          <div class="left_div">
+            <ion-label class="link_lbl">20 minutes</ion-label>
+          </div>
+          <div class="right_div">
+            <div class="round_div" style="margin-right: 0px;" (click)="shareActionSheet()">
+              <ion-icon name="arrow-redo-outline"></ion-icon>
+            </div>
+            <div class="round_div" style="margin-right: 0px;">
+              <ion-icon name="headset-outline"></ion-icon>
+            </div>
+            <div class="round_div" style="margin-right: 0px;">
+              <ion-icon name="document-text-outline" class="cpy"></ion-icon>
+            </div>
+            <div class="round_div" style="margin-right: 0px;" (click)="presentActionSheet()">
+              <ion-icon name="ellipsis-vertical"></ion-icon>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</ion-content>

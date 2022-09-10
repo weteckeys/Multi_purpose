@@ -1,0 +1,29 @@
+.head_lbl{
+    font-weight: bold;
+    font-size: 22px;
+}
+
+ion-button{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: white;
+
+    ion-icon{
+        font-size: 28px;
+    }
+}
+
+ion-label{
+    display: block;
+    text-align: center;
+    color: white;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.abs_div{
+    padding-top: 60px;
+    height: 90vh;
+    overflow: scroll;
+}

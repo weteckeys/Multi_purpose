@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    
+    <ion-icon class="back" name="arrow-back-outline" (click)="goBack()"></ion-icon>
+
+    <ion-title>Select Language</ion-title>
+    <ion-button fill="clear" slot="end" size="small">
+      Skip
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="main_content_div">
+
+    <ion-grid>
+      <ion-row *ngFor="let item of [1,2,3]">
+        <ion-col size="6" *ngFor="let item of lang" (click)="selectLang(item.name)">
+          <div class="back_image bg_image" [style.backgroundImage]="'url( '+ item.img +' )'">
+            <ion-icon name="checkmark-circle-sharp" *ngIf="sel == item.name"></ion-icon>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+  </div>
+</ion-content>
+<ion-footer>
+  <div class="footer_div">
+    <ion-button (click)="goToMusicList()" expand="block">
+      Apply
+    </ion-button>
+  </div>
+</ion-footer>

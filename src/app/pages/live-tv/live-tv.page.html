@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button color="dark"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Live TV</ion-title>
+
+    <ion-button slot="end" size="small" fill="clear">
+      <ion-icon name="search-outline"></ion-icon>
+    </ion-button>
+
+    <ion-button slot="end" size="small" fill="clear">
+      <ion-icon name="notifications-outline"></ion-icon>
+    </ion-button>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="main_content_div">
+        
+    <div class="story_div">
+      
+      <div class="chips_div">
+        <div class="inner_div" *ngFor="let item of repoters" (click)="selectLang(item.name)">
+          <div class="story_img_main" [class.story]="repoter == item.name">
+            <div class="story_img bg_image" [style.backgroundImage]="'url('+ item.img +')'"></div>
+          </div>
+          <ion-label class="chip">{{item.name | slice : 0: 10}}</ion-label>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="video_div">
+      <video playsinline webkit-playsinline autoplay>
+        <source src="assets/imgs/video.mp4" type="video/mp4">
+      </video>
+      <div class="channel_detail">
+        <img src="assets/imgs/news_icn3.png">
+        <ion-label class="channel_name">The Times of India</ion-label>
+      </div>
+
+      <ion-label class="head_line">Watch Republic Live | {{repoter}} News 24X7</ion-label>
+    </div>
+
+    <div class="lower_div">
+
+      <div class="news_card" *ngFor="let item of channelList">
+
+        <div class="flex_div">
+          <div class="detail_div">
+            <div class="channel_detail2">
+              <img src="{{item.logo}}">
+              <ion-label class="channel_name">The Times of India</ion-label> 
+            </div>
+            <ion-label class="head_line2">Watch Republic Live | {{repoter}} News 24X7</ion-label>
+          </div>
+          <div class="back_image2 bg_image" [style.backgroundImage]="'url('+ item.img +')'"></div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</ion-content>

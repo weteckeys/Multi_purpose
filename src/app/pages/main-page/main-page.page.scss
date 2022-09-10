@@ -1,0 +1,401 @@
+.header_div{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    padding: 5px;
+    img{
+        width: 100px;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%);
+    }
+    .btn_div{
+        display: flex;
+    }
+    ion-button{
+        color: black;
+    }
+}
+
+.main_content_div{
+    width: 100%;
+
+    ion-label {
+        display: block;
+    }
+
+    .search_card{
+        padding: 16px;
+        border-bottom: 1px solid lightgray;
+        .search_flex{
+            display: flex;
+
+            .back_image{
+                width: 90px;
+                height: 90px;
+                border-radius: 5px;
+                min-width: 90px;
+            }
+
+            .search_detail{
+                padding-left: 10px;
+
+                .heal_lbl{
+                    font-weight: 500;
+                    font-size: 15px;
+                    margin-bottom: 5px;
+                }
+
+                .small{
+                    font-size: 13px;
+                    color: gray;
+
+                    span{
+                        color: black;
+                        font-weight: 500;
+                        font-size: 14px;
+                    }
+                }
+
+                .inner_flex{
+                    display: flex;
+                    margin-top: 7px;
+                    .rate{
+                        font-size: 14px;
+                        font-weight: 600;
+                        margin-right: 10px;
+                    }
+
+                    ion-icon{
+                        margin-left: 3px;
+                        color: gray;
+                    }
+                    .light{
+                        font-size: 13px;
+                        color: gray;
+                        margin-left: 7px;
+                    }
+                }
+            }
+        }
+        .btn_flex{
+            display: flex;
+            margin-top: 10px;
+            height: 35px;
+
+            .btns1{
+                width: 100%;
+                overflow: hidden;
+                margin-right: 10px;
+                border-right: 1px solid var(--ion-color-primary);
+            }
+            .btns2{
+                width: 100%;
+                overflow: hidden;
+            }
+            .b1{                    
+                margin-right: -20px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+                height: 35px;
+                border: 1px solid var(--ion-color-primary);
+                border-radius: 25px;
+
+                ion-icon{
+                    font-size: 16px;
+                }
+                ion-label {
+                    font-size: 14px;
+                }
+            }
+            
+            .b2{                    
+                margin-left: -20px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+                height: 35px;
+
+                ion-label {
+                    font-size: 14px;
+                    padding-left: 16px;
+                }
+            }
+        }
+    }
+
+    // Shopping
+
+    .search_div{
+        padding: 10px 16px;
+        border-bottom: 1px solid lightgray;
+    
+        ion-input{
+            border: 1px solid black;
+            border-radius: 25px;
+            ion-icon{
+                font-size: 20px;
+                padding-left: 10px;
+                padding-right: 5px;
+            }
+        }
+
+        .test{
+            display: flex;
+            align-items: center;
+            margin-right: 10px;
+            border-radius: 25px;
+            padding: 5px 15px;
+            flex-direction: column;
+
+            ion-icon{
+                font-size: 26px;
+                color: var(--ion-color-primary);
+            }
+        }
+    
+        .active{ 
+            ion-label {
+                color: var(--ion-color-primary) !important;
+            }
+        }
+    
+        .chips_div{
+            display: flex;
+            flex-direction: row;
+            overflow: scroll;
+            .chip{
+                white-space: nowrap;
+                color: black;
+                font-size: 13px;
+                font-weight: 500;
+            }
+
+            .line_span{
+                margin-top: 7px;
+                width: 20px;
+                height: 2px;
+                background: var(--ion-color-primary);
+            }
+        }  
+    }
+
+    .category_div{
+        padding: 10px 16px;
+    }
+
+    .slider_div{
+        padding: 0px 16px;
+        ion-slide{
+            margin-right: 10px;
+        }
+
+        .slide_image{
+            width: 100%;
+            height: 170px;
+            border-radius: 5px;
+        }
+    }
+
+    .product_div{
+        padding: 16px;
+        border-bottom: 1px solid lightgray;
+
+        .header_lbl{
+            font-size: 15px;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+        ion-grid{
+            padding: 0;
+
+            ion-col{
+                text-align: center;
+                
+                img {
+                    width: 70px;
+                    height: 70px;
+                }
+                ion-label {
+                    font-size: 13px;
+                    margin-top: 5px;
+                }
+
+                .pro_div{
+                    width: 100%;
+                    height: 120px;
+                    border-radius: 5px;
+                }
+
+                .left_lbl{
+                    text-align: left;
+                    text-transform: uppercase;
+                    color: gray;
+                    font-size: 11px;
+                    font-weight: 500;
+                }
+            }
+        }
+
+        .light_lbl{
+            color: gray;
+            font-size: 12px;
+            margin-top: 15px;
+        }
+        .blue_lbl{
+            font-size: 13px;
+            color: var(--ion-color-primary);
+            text-align: center;
+        }
+    }
+
+    .cover_div{
+        padding: 16px;
+        border-bottom: 1px solid lightgray;
+
+        .cover_image{
+            height: 230px;
+            width: 100%;
+            border-radius: 5px;
+        }
+        ion-grid{
+            padding: 0;
+            ion-col{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                img{
+                    width: 80px;
+                }
+            }
+        }
+    }
+
+    .today_deals{
+        padding: 16px;
+        border-bottom: 1px solid lightgray;
+
+        .header_lbl{
+            font-size: 15px;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        .main_img{
+            width: 70%;
+            display: block;
+            margin: auto;
+        }
+
+        .deal_detail{
+            font-weight: 500;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .deal_slider{
+            margin-top: 20px;
+            div{
+                width: 90%;
+                border: 1px solid lightgray;
+                padding: 5px;
+            }
+        }
+    }
+
+    .feature_div{
+        padding: 16px;
+
+        .header_lbl{
+            font-size: 15px;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        ion-slide{
+            margin-right: 15px;
+        }
+
+        .back_image{
+            height: 150px;
+            width: 100%;
+            border-radius: 7px;
+
+            .overlay{
+                height: 150px;
+                width: 100%;
+                border-radius: 7px;
+                background: rgba(0,0,0,0.3);
+                background: linear-gradient(rgba(255,255,255,0.1), rgba(0,0,0,0.5));
+                position: relative;
+
+                ion-label {
+                    position: absolute;
+                    bottom: 0;
+                    color: white;
+                    font-weight: 500;
+                    font-size: 14px;
+                    text-align: left;
+                    padding: 7px;
+                }
+            }
+        }
+    }
+
+    // Images
+
+    .images_div{
+        padding: 10px;
+
+        .masonry { /* Masonry container */
+            -webkit-column-count: 4;
+            -moz-column-count:4;
+            column-count: 2;
+            -webkit-column-gap: 1em;
+            -moz-column-gap: 1em;
+            column-gap: 1em;
+            margin: 0px;
+            padding: 0;
+            -moz-column-gap: 1.5em;
+            -webkit-column-gap: 1.5em;
+            column-gap: 3px;
+            font-size: .85em;
+            text-align: center;
+        }
+        .item {
+            display: inline-block;
+            background: #fff;
+            padding: 5px;
+            margin: 5px;
+            width: 95%;
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            border-radius: 10px;
+            text-align: left;
+            position: relative;
+
+            ion-label {
+                position: absolute;
+                bottom: 10px;
+                color: white;
+                font-weight: 600;
+                font-size: 15px;
+                padding: 7px;
+            }
+
+            .overlay{
+                height: 100%;
+                width: 100%;
+                border-radius: 10px;
+                background: rgba(0,0,0,0.3);
+                // background: linear-gradient(rgba(255,255,255,0.1), rgba(0,0,0,0.5));
+            }
+
+            img{
+                width: 100%;
+                border-radius: 10px;
+            }
+        }
+    }
+}

@@ -1,0 +1,237 @@
+<ion-header>
+  <div class="header_div" [class.ios_pad]="plt == 'ios'">
+
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <img src="assets/imgs/logo.png" alt="">
+
+    <div class="btn_div">
+
+      <ion-button (click)="shareActionSheet()" size="small" fill="clear">
+        <ion-icon name="arrow-redo-outline"></ion-icon>
+      </ion-button>
+
+      <ion-button size="small" fill="clear">
+        <ion-icon name="notifications-outline"></ion-icon>
+      </ion-button>
+
+    </div>
+
+  </div>
+</ion-header>
+
+<ion-content>
+  <div class="main_content_div">
+
+    <div class="search_div">
+      <ion-input type="text" placeholder="Search">
+        <ion-icon name="search-outline"></ion-icon>
+      </ion-input>
+    </div>
+
+    <div class="search_div">
+      <div class="chips_div">
+        <div class="test" [class.active]="id == i" *ngFor="let item of moviesCat; let i = index">
+          <ion-label class="chip" (click)="selectCat(item)">{{item}}</ion-label>
+          <span class="line_span" *ngIf="id == item"></span>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="id == 'Search'">
+      <div class="search_card" *ngFor="let item of clinic">
+
+        <div class="search_flex">
+
+          <div class="back_image bg_image" [style.backgroundImage]="'url( '+ item.img +' )'"></div>
+
+          <div class="search_detail">
+            <ion-label class="heal_lbl">{{item.name}}</ion-label>
+            <ion-label class="small">Jail Road • <span>3.2</span></ion-label>
+
+            <div class="inner_flex">
+              <ion-label class="rate">3.2 KM</ion-label>
+
+              <div>
+                <!-- <ion-rating 
+                [rate]="rate"
+                [(ngModel)] = "rate"
+                readonly="false"
+                size="small"
+                (rateChange)="onRateChange($event)">
+                </ion-rating> -->
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+              </div>
+
+              <ion-label class="light">13 Ratings</ion-label>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="btn_flex">
+          <div class="btns1">
+            <ion-button class="b1" expand="block" shape="round" fill="clear">
+              <ion-icon slot="start" name="call"></ion-icon>
+              <ion-label>Call Now</ion-label>
+            </ion-button>
+          </div>
+          <div class="btns2">
+            <ion-button class="b2" expand="block" shape="round">
+              <ion-label>Get Best Deal</ion-label>
+            </ion-button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div *ngIf="id == 'Shopping'">
+
+      <div class="category_div">
+
+      </div>
+
+      <div class="slider_div">
+        <ion-slides mode="ios" pager="ios">
+          <ion-slide *ngFor="let item of slider">
+            <div class="slide_image bg_image" [style.backgroundImage]="'url( '+ item.img +' )'"></div>
+          </ion-slide>
+        </ion-slides>
+      </div>
+
+      <div class="product_div">
+        <ion-label class="header_lbl">Electronics</ion-label>
+        <ion-grid fixed>
+          <ion-row>
+            <ion-col size="4" *ngFor="let item of (products | slice : 0 : 3)">
+              <img src="{{item.img}}">
+              <ion-label>{{item.name}}</ion-label>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+
+      <div class="product_div">
+        <ion-label class="header_lbl">Fashion</ion-label>
+        <ion-grid fixed>
+          <ion-row>
+            <ion-col size="4" *ngFor="let item of (products | slice : 3 : 6)">
+              <img src="{{item.img}}">
+              <ion-label>{{item.name}}</ion-label>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+
+      <div class="cover_div">
+        <div class="cover_image bg_image" [style.backgroundImage]="'url(assets/imgs/shop/fit.jpg)'"></div>
+        <ion-grid fixed>
+          <ion-row>
+            <ion-col size="4">
+              <img src="assets/imgs/shop/fit1.png">
+            </ion-col>
+            <ion-col size="4">
+              <img src="assets/imgs/shop/fit2.jpg">
+            </ion-col>
+            <ion-col size="4">
+              <img src="assets/imgs/shop/fit3.gif">
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+
+      <div class="product_div">
+        <ion-label class="header_lbl">Luxurious Product For Your Beauty Routine</ion-label>
+        <ion-grid fixed>
+          <ion-row>
+            <ion-col size="6" *ngFor="let item of beauty">
+              <div class="pro_div bg_image" [style.backgroundImage]="'url( '+ item.img +' )'"></div>
+              <ion-label class="left_lbl">{{item.name}}</ion-label>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
+        <ion-label class="light_lbl">Explore range of Products</ion-label>
+      </div>
+
+      <div class="product_div">
+        <ion-label class="blue_lbl">Explore More</ion-label>
+      </div>
+
+      <div class="product_div">
+        <ion-label class="header_lbl">Home</ion-label>
+        <ion-grid fixed>
+          <ion-row>
+            <ion-col size="4" *ngFor="let item of (products | slice : 6 )">
+              <img src="{{item.img}}">
+              <ion-label>{{item.name}}</ion-label>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+
+      <div class="today_deals">
+        <ion-label class="header_lbl">Home</ion-label>
+
+        <img class="main_img" src="assets/imgs/shop/deal1.jpg" alt="">
+
+        <ion-label class="deal_detail">
+          Samsung Wired gaming Earphone with Dual Driver and Mic
+        </ion-label>
+        <ion-label class="deal_detail">₹ 1799.00</ion-label>
+
+        <div class="deal_slider">
+          <ion-slides mode="ios" [options]="slideOpts">
+            <ion-slide *ngFor="let item of deal">
+              <div>
+                <img src="{{item.img}}" alt="">
+              </div>
+            </ion-slide>
+          </ion-slides>
+        </div>
+      </div>
+
+      <div class="product_div">
+        <ion-label class="blue_lbl">Explore More</ion-label>
+      </div>
+
+      <div class="feature_div">
+        <ion-label class="header_lbl">Featured Categories</ion-label>
+
+        <ion-slides mode="ios" [options]="slideOpts2">
+          <ion-slide *ngFor="let item of featureCat">
+            <div class="back_image bg_image" [style.backgroundImage]="'url( '+ item.img +' )'">
+              <div class="overlay">
+                <ion-label>{{item.name}}</ion-label>
+              </div>
+            </div>
+          </ion-slide>
+        </ion-slides>
+
+      </div>
+
+    </div>
+
+    <div *ngIf="id == 'Images'">
+      <div class="images_div">
+
+        <div class="masonry">
+          <div class="item" *ngFor="let item of images">
+            <!-- <div class="overlay"> -->
+            <img src="{{item.img}}">
+            <ion-label>{{item.name}}</ion-label>
+            <!-- </div> -->
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</ion-content>

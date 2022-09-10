@@ -1,0 +1,22 @@
+.main_content_div{
+    width: 100%;
+    padding: 10px;
+
+    .inner_col{
+        text-align: center;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        img{
+            width: 20px;
+        }
+        ion-label {
+            font-size: 13px;
+            display: block;
+            margin-top: 7px;
+        }
+    }
+}

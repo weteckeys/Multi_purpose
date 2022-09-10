@@ -1,0 +1,169 @@
+<ion-app>
+
+  <ion-menu type="push" contentId="main">
+    <ion-header class="ion-no-border">
+      <ion-toolbar>
+        <ion-button (click)="close()" fill="clear">
+          <ion-icon name="close" color="dark"></ion-icon>
+        </ion-button>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+      <div class="main_menu_div">
+
+        <div class="user_detail_div">
+          <div class="user_per">
+            <ion-label class="username">John Doe</ion-label>
+            <ion-label class="light">Manage profile & settings</ion-label>
+          </div>
+          <div class="back_image bg_image" [style.backgroundImage]="'url(assets/imgs/users/user1.jpg)'"></div>
+        </div>
+
+        <div class="chip_div">
+          <ion-chip mode="ios" outline="true">
+            <ion-label>Saved</ion-label>
+          </ion-chip>
+          <ion-chip mode="ios" outline="true">
+            <ion-label>Favourites</ion-label>
+          </ion-chip>
+          <ion-chip mode="ios" outline="true">
+            <ion-label>Interest</ion-label>
+          </ion-chip>
+          <ion-chip mode="ios" outline="true">
+            <ion-label>Friends</ion-label>
+          </ion-chip>
+        </div>
+
+        <div class="list_div">
+
+          <div class="single_list">
+            <div class="round_div">
+              <ion-icon name="cube-outline"></ion-icon>
+            </div>
+            <ion-label>3D Notification</ion-label>
+            <ion-toggle mode="md"></ion-toggle>
+          </div>
+
+          <div class="single_list">
+            <div class="round_div">
+              <img src="assets/imgs/india.png">
+            </div>
+            <ion-label>Country and Language</ion-label>
+            <ion-label class="abs_lbl">Change</ion-label>
+          </div>
+
+          <div class="single_list">
+            <div class="round_div">
+              <ion-icon name="mail-outline"></ion-icon>
+            </div>
+            <ion-label>Feedback</ion-label>
+          </div>
+
+          <div class="single_list">
+            <div class="round_div">
+              <ion-icon name="repeat-outline"></ion-icon>
+            </div>
+            <ion-label>My Transactions</ion-label>
+          </div>
+
+          <div class="single_list">
+            <div class="round_div">
+              <ion-icon name="trending-up-outline"></ion-icon>
+            </div>
+            <ion-label>List a Business</ion-label>
+          </div>
+
+          <div class="single_list">
+            <div class="round_div">
+              <ion-icon name="volume-medium-outline"></ion-icon>
+            </div>
+            <ion-label>Advertise</ion-label>
+          </div>
+
+          <div class="single_list">
+            <div class="round_div">
+              <img src="assets/imgs/upi2.png">
+            </div>
+            <ion-label>UPI</ion-label>
+          </div>
+
+          <div class="single_list">
+            <div class="round_div">
+              <ion-icon name="document-text-outline"></ion-icon>
+            </div>
+            <ion-label>Edit News Font Size</ion-label>
+            <ion-label class="abs_lbl">Medium</ion-label>
+          </div>
+
+          <div class="single_list">
+            <div class="round_div">
+              <ion-icon name="settings-outline"></ion-icon>
+            </div>
+            <ion-label>Settings</ion-label>
+          </div>
+
+          <div class="single_list">
+            <div class="round_div">
+              <ion-icon name="shield-checkmark-outline"></ion-icon>
+            </div>
+            <ion-label>Privacy</ion-label>
+          </div>
+
+          <div class="single_list">
+            <div class="round_div">
+              <ion-icon name="star-outline"></ion-icon>
+            </div>
+            <ion-label>Rate Us</ion-label>
+          </div>
+
+          <div class="single_list">
+            <div class="round_div">
+              <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
+            </div>
+            <ion-label>Others</ion-label>
+          </div>
+
+          <div class="single_list">
+            <div class="round_div">
+              <ion-icon name="help-outline"></ion-icon>
+            </div>
+            <ion-label>Help and Support</ion-label>
+          </div>
+
+          <div class="single_list">
+            <div class="round_div">
+              <ion-icon name="alert-circle-outline"></ion-icon>
+            </div>
+            <ion-label>About Us</ion-label>
+          </div>
+
+          <div class="single_list">
+            <div class="round_div">
+              <ion-icon name="person-outline"></ion-icon>
+            </div>
+            <ion-label>Refer & Earn</ion-label>
+          </div>
+
+          <div class="single_list">
+            <div class="round_div">
+              <ion-icon name="newspaper-outline"></ion-icon>
+            </div>
+            <ion-label>Send Feedback</ion-label>
+          </div>
+
+          <div class="single_list">
+            <div class="round_div">
+              <ion-icon name="exit-outline"></ion-icon>
+            </div>
+            <ion-label>Logout</ion-label>
+          </div>
+
+        </div>
+
+      </div>
+    </ion-content>
+  </ion-menu>
+
+  <ion-router-outlet id="main"></ion-router-outlet>
+</ion-app>

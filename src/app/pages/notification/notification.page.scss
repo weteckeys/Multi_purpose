@@ -1,0 +1,57 @@
+.back{
+    font-size: 25px;
+    margin-left: 16px;
+}
+.main_content_div{
+    // padding: 16px;
+
+    ion-label {
+        display: block;
+    }
+
+    .card_div{
+        position: relative;
+        display: flex;
+        padding: 16px;
+        
+        .back_image{
+            height: 50px;
+            width: 50px;
+            min-width: 50px;
+            border-radius: 100%;
+        }
+
+        .detail{
+            padding-left: 10px;
+
+            .head{
+                font-size: 15px;
+                width: 85%;
+            }
+            .sub{
+                font-size: 14px;
+                color: #505050;
+            }
+
+            .time{
+                font-size: 12px;
+                margin-top: 5px;
+                color: gray;
+            }
+
+            ion-button{
+                margin: 0;
+                top: 15px;
+                right: 0;
+                position: absolute;
+                color: black;
+            }
+
+            // ion-icon{
+            //     position: absolute;
+            //     right: 16px;
+            //     top: 20px;
+            // }
+        }
+    }
+}

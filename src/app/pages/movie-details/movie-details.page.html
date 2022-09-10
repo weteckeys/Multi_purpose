@@ -1,0 +1,174 @@
+<ion-header>
+  <ion-toolbar>
+    <!-- <ion-buttons slot="start">
+      <ion-menu-button color="dark"></ion-menu-button>
+    </ion-buttons> -->
+
+    <ion-icon class="back" name="arrow-back-outline" (click)="goBack()"></ion-icon>
+    
+    <ion-title>Baaghi</ion-title>
+
+    <ion-button slot="end" size="small" fill="clear">
+      <ion-icon name="arrow-redo-outline"></ion-icon>
+    </ion-button>
+
+    <ion-button slot="end" size="small" fill="clear">
+      <ion-icon name="search-outline"></ion-icon>
+    </ion-button>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="main_content_div">
+
+    <div class="movie_detail">
+      <img src="assets/imgs/image8.jpeg">
+
+      <ion-label class="detail_lbl">
+        <span style="color: var(--ion-color-success)">3.0/10</span> •
+        <span>145 min</span> •
+        <span>Hindi</span> •
+        <span>U/A</span> •
+        <span>Action & Advanture</span> •
+        <span>Mystery & Thriller</span>
+      </ion-label>
+    </div>
+
+    <div class="btn_div">
+      <ion-button expand="block" color="danger">
+        <ion-icon name="caret-forward-outline"></ion-icon>
+        Play
+      </ion-button>
+
+      <ion-button class="icn_btn">
+        <ion-icon name="chevron-down-outline"></ion-icon>
+      </ion-button>
+
+      <ion-label class="desc">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+        At consequuntur architecto soluta commodi dolorum, officiis unde 
+        rerum quae illo sit!
+      </ion-label>
+
+      <ion-label class="desc">
+        Cast - Tiger Shroff, Shradha Kapoor, Ritesh Deshmukh and Ankita Lokhande
+      </ion-label>
+
+      <ion-label class="desc">
+        Director - Ahmed Khan
+      </ion-label>
+
+      <ion-grid fixed>
+        <ion-row>
+
+          <ion-col size="3">
+            <ion-icon name="add"></ion-icon>
+            <ion-label>My List</ion-label>
+          </ion-col>
+
+          <ion-col size="3">
+            <ion-icon name="star-outline"></ion-icon>
+            <ion-label>Rate</ion-label>
+          </ion-col>
+
+          <ion-col size="3">
+            <ion-icon name="arrow-redo-outline"></ion-icon>
+            <ion-label>Share</ion-label>
+          </ion-col>
+
+          <ion-col size="3">
+            <ion-icon name="caret-forward-outline"></ion-icon>
+            <ion-label>Trailer</ion-label>
+          </ion-col>
+
+        </ion-row>
+      </ion-grid>
+
+      <div class="rate_flex">
+        <div class="back"></div>
+        <ion-label>30 users have rated this</ion-label>
+      </div>
+
+    </div>
+
+    <div class="video_div">
+      <ion-label class="head_lbl">Video</ion-label>
+
+      <div>
+        <video playsinline webkit-playsinline autoplay>
+          <source src="assets/imgs/video.mp4" type="video/mp4">
+        </video>
+        <div class="video_detail">
+          Baaghi 3 | Tiger Shroff | Shradha Kapoor | Ritesh Deshmukh | Sajid Nadiadwala | Ahmed Khan
+        </div>
+      </div>
+    </div>
+
+    <div class="main_slider">
+      <div class="head_flex">
+        <ion-label class="head_lbl">More Movies Online</ion-label>
+        <ion-label class="small_lbl">View More</ion-label>
+      </div>
+
+      <div class="slider_class">
+        <ion-slides mode="ios" [options]="slideOpts">
+          <ion-slide *ngFor="let item of (movies | slice : 0: 7)">
+            <div class="image_div bg_image" [style.backgroundImage]="'url( '+ item.img +' )'"></div>
+          </ion-slide>
+        </ion-slides>
+      </div>
+    </div>
+
+    <div class="main_slider">
+      <div class="head_flex">
+        <ion-label class="head_lbl">Critic Reviews</ion-label>
+      </div>
+
+      <div class="critic_slider">
+        <ion-slides mode="ios" [options]="slideOpts2">
+          <ion-slide *ngFor="let item of review">
+
+            <div class="slider_box">
+
+              <div class="user_detail">
+                <div class="user_image bg_image" [style.backgroundImage]="'url( '+ item.user +' )'"></div>
+
+                <div class="user_personal">
+                  <ion-label class="username">{{item.name}}</ion-label>
+                  <ion-label class="light_lbl">News 18</ion-label>
+                  <div class="rate_div">
+                    <ion-label>{{item.review}}</ion-label>
+                    <ion-icon name="star"></ion-icon>
+                  </div>
+                </div>
+              </div>
+
+              <ion-label class="review">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+                Nam amet repudiandae nostrum ipsum quibusdam excepturi laborum 
+                repellendus ratione aliquam harum sed facere quisquam architecto 
+                aperiam explicabo debitis impedit, deleniti temporibus?
+              </ion-label>
+
+            </div>
+
+          </ion-slide>
+        </ion-slides>
+      </div>
+
+    </div>
+
+    <div class="summary">
+      <ion-label class="head_lbl">Baaghi 3 movie summary</ion-label>
+
+      <ion-label class="movie_summary">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto perferendis, aliquam maiores iure repellat velit autem debitis dignissimos nemo! Accusantium tenetur repudiandae qui quaerat minima ex ut tempore, voluptatum assumenda?
+      </ion-label>
+
+      <ion-label class="movie_summary">Total Rating Count : 1490</ion-label>
+    </div>
+
+
+  </div>
+</ion-content>

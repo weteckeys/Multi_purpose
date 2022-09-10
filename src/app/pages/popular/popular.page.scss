@@ -1,0 +1,110 @@
+ion-header{
+    .back{
+        font-size: 27px;
+        margin-left: 10px;
+    }
+    ion-button{
+        margin: 0;
+
+        ion-icon{
+            color: black;
+            font-size: 20px;
+        }
+    }
+}
+
+.main_content_div{
+    width: 100%;
+
+    ion-label {
+        display: block;
+    }
+
+    .search_div{
+        padding: 10px 16px;
+        border-bottom: 1px solid lightgray;
+    
+        ion-input{
+            border: 1px solid black;
+            border-radius: 25px;
+            ion-icon{
+                font-size: 20px;
+                padding-left: 10px;
+                padding-right: 5px;
+            }
+        }
+
+        .test{
+            display: flex;
+            align-items: center;
+            margin-right: 10px;
+            border: 1px solid lightgray;
+            background: whitesmoke;
+            border-radius: 25px;
+            padding: 5px 15px;
+
+            ion-icon{
+                font-size: 13px;
+            }
+        }
+    
+        .active{
+            border: 1px solid var(--ion-color-primary);
+            background: rgba(17,116,192,0.2);
+            
+            ion-label {
+                color: var(--ion-color-primary) !important;
+            }
+
+            ion-icon{
+                color: var(--ion-color-primary);
+            }
+        }
+    
+        .chips_div{
+            display: flex;
+            flex-direction: row;
+            overflow: scroll;
+            .chip{
+                white-space: nowrap;
+                color: black;
+                font-size: 13px;
+                margin-right: 7px;
+            }  
+        }  
+    }
+
+    .lower_div{
+        padding: 10px;
+
+        ion-grid{
+            padding: 0;
+        }
+
+        .image_div{
+            width: 100%;
+            height: 150px;
+            border-radius: 5px;
+            position: relative;
+
+            .white_div{
+                background: white;
+                border-radius: 25px;
+                display: flex;
+                position: absolute;
+                bottom: 10px;
+                right: 10px;
+                padding: 3px 6px;
+                ion-icon{
+                    color: #FF6B01;
+                    font-size: 15px;
+                    margin-right: 5px;
+                }
+
+                ion-label {
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}

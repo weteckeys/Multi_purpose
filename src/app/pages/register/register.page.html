@@ -1,0 +1,49 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="main_content_div">
+
+    <div class="upper_div">
+      <img src="assets/imgs/logo.png" class="logo">
+      <ion-label class="top_lbl">Login for a seamless experience</ion-label>
+
+      <ion-input type="text" placeholder="Username" [(ngModel)]="name"></ion-input>
+      <ion-input type="password" placeholder="Password" [(ngModel)]="number"></ion-input>
+
+      <div class="fab_div">
+        <ion-fab slot="fixed" (click)="register()">
+          <ion-fab-button>
+            <ion-icon name="arrow-forward-outline"></ion-icon>
+          </ion-fab-button>
+        </ion-fab>
+      </div>
+
+      <div class="flex_div">
+        <div class="f_div"></div>
+        <div class="or_div">
+          OR
+        </div>
+        <div class="f_div"></div>
+      </div>
+
+      <ion-button expand="block" fill="clear" shape="round">
+        <img src="assets/imgs/fb.png" alt="">
+        Continue with Facebook
+      </ion-button>
+
+      <ion-button expand="block" fill="clear" shape="round">
+        <img src="assets/imgs/gp.png" alt="">
+        Continue with Google
+      </ion-button>
+
+    </div>
+
+    <div class="lower_div">
+      <ion-label class="bottom_lbl" (click)="goToTabs()">Maybe Later</ion-label>
+    </div>
+  </div>
+</ion-content>

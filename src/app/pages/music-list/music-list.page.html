@@ -1,0 +1,127 @@
+<ion-header>
+  <ion-toolbar>
+   <!-- <ion-buttons slot="start">
+     <ion-back-button mode="md"></ion-back-button>
+   </ion-buttons> -->
+
+   <ion-icon class="back" name="arrow-back-outline" (click)="goBack()"></ion-icon>
+
+    <ion-title>Music</ion-title>
+
+    <ion-button slot="end" size="small" fill="clear">
+      <ion-icon name="language-outline"></ion-icon>
+    </ion-button>
+
+    <ion-button slot="end" size="small" fill="clear">
+      <ion-icon name="notifications-outline"></ion-icon>
+    </ion-button>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="main_content_div">
+
+    <div class="upper_div">
+      <ion-input placeholder="Search" type="text">
+        <ion-icon name="search-outline"></ion-icon>
+      </ion-input>
+    </div>
+
+    <div class="lower_div">
+
+      <div class="main_slider">
+        <div class="head_flex">
+          <ion-label class="head_lbl">Trending Songs Hindi</ion-label>
+          <ion-label class="small_lbl" (click)="goToMoreMusic()">View More</ion-label>
+        </div>
+
+        <div class="slider_class">
+          <ion-slides mode="ios" [options]="slideOpts">
+            <ion-slide *ngFor="let item of (songs | slice : 0 : 7)" (click)="goToMusicVideo()">
+              <div class="inner_slider">
+                <div class="image_div bg_image" [style.backgroundImage]="'url( '+ item.img +' )'" ></div>
+                <ion-label class="name">{{item.name | slice: 0: 15}}</ion-label>
+              </div>
+            </ion-slide>
+          </ion-slides>
+        </div>
+      </div>
+
+      <div class="main_slider">
+        <div class="head_flex">
+          <ion-label class="head_lbl">Trending Songs Punjabi</ion-label>
+          <ion-label class="small_lbl" (click)="goToMoreMusic()">View More</ion-label>
+        </div>
+
+        <div class="slider_class">
+          <ion-slides mode="ios" [options]="slideOpts">
+            <ion-slide *ngFor="let item of (songs | slice : 7 )" (click)="goToMusicVideo()">
+              <div class="inner_slider">
+                <div class="image_div bg_image" [style.backgroundImage]="'url( '+ item.img +' )'" ></div>
+                <ion-label class="name">Hello</ion-label>
+              </div>
+            </ion-slide>
+          </ion-slides>
+        </div>
+      </div>
+
+      <div class="main_slider">
+        <div class="head_flex">
+          <ion-label class="head_lbl">New Realese Hindi</ion-label>
+          <ion-label class="small_lbl" (click)="goToMoreMusic()">View More</ion-label>
+        </div>
+
+        <div class="slider_class">
+          <ion-slides mode="ios" [options]="slideOpts">
+            <ion-slide *ngFor="let item of (songs | slice : 4: 11)" (click)="goToMusicVideo()">
+              <div class="inner_slider">
+                <div class="image_div bg_image" [style.backgroundImage]="'url( '+ item.img +' )'" ></div>
+                <ion-label class="name">Hello</ion-label>
+              </div>
+            </ion-slide>
+          </ion-slides>
+        </div>
+      </div>
+
+      <div class="main_slider">
+        <div class="head_flex">
+          <ion-label class="head_lbl">New Realese Punjabi</ion-label>
+          <ion-label class="small_lbl" (click)="goToMoreMusic()">View More</ion-label>
+        </div>
+
+        <div class="slider_class">
+          <ion-slides mode="ios" [options]="slideOpts">
+            <ion-slide *ngFor="let item of (songs | slice : 7: 12)" (click)="goToMusicVideo()">
+              <div class="inner_slider">
+                <div class="image_div bg_image" [style.backgroundImage]="'url( '+ item.img +' )'" ></div>
+                <ion-label class="name">Hello</ion-label>
+              </div>
+            </ion-slide>
+          </ion-slides>
+        </div>
+      </div>
+
+
+      <div class="main_slider">
+        <div class="head_flex">
+          <ion-label class="head_lbl">Popular in Hindi</ion-label>
+          <ion-label class="small_lbl" (click)="goToMoreMusic()">View More</ion-label>
+        </div>
+
+        <div class="slider_class">
+          <ion-slides mode="ios" [options]="slideOpts">
+            <ion-slide *ngFor="let item of (songs | slice : 0: 7)" (click)="goToMusicVideo()">
+              <div class="inner_slider">
+                <div class="image_div bg_image" [style.backgroundImage]="'url( '+ item.img +' )'" ></div>
+                <ion-label class="name">Hello</ion-label>
+              </div>
+            </ion-slide>
+          </ion-slides>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</ion-content>

@@ -1,0 +1,152 @@
+ion-header{
+    ion-button{
+        margin: 0;
+
+        ion-icon{
+            color: black;
+            font-size: 20px;
+        }
+    }
+}
+.main_content_div{
+    .story_div{
+        padding: 16px;
+        border-bottom: 1px solid lightgray;
+        
+        .chips_div{
+            display: flex;
+            flex-direction: row;
+            overflow: scroll;
+
+            .inner_div{
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                margin-right: 15px;
+                align-items: center;
+                justify-content: space-between;
+
+                .story{
+                    border: 2px solid red;
+                }
+
+                .story_img_main{
+                    width: 60px;
+                    height: 60px;
+                    border-radius: 100%;
+                    position: relative;
+                }
+                .story_img{
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%,-50%);
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 100%;
+                }
+            }
+
+            .chip{
+                white-space: nowrap;
+                color: #505050;
+                font-size: 12px;
+                margin-top: 7px;
+            }  
+        }
+    }
+
+    .video_div{
+        padding: 20px;
+        border-bottom: 1px solid lightgray;
+
+        video{
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .channel_detail{
+            display: flex;
+            margin-top: 15px;
+            align-items: center;
+            margin-bottom: 10px;
+            img{
+                width: 25px;
+            }
+            .channel_name{
+                font-weight: 600;
+                font-size: 15px;
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+        }
+
+        .head_line{
+            font-weight: 500;
+            font-size: 18px;
+        }
+    }
+    .lower_div{
+        .news_card{
+            padding: 16px;
+            border-bottom: 1px solid lightgray;
+
+            video{
+                width: 100%;
+                border-radius: 10px;
+            }
+
+            .channel_detail{
+                display: flex;
+                margin-top: 1px;
+                align-items: center;
+                margin-bottom: 10px;
+                img{
+                    width: 25px;
+                }
+                .channel_name{
+                    font-size: 15px;
+                    margin-left: 10px;
+                    margin-right: 10px;
+                }
+            }
+
+            .head_line{
+                font-weight: 500;
+                color: gray;
+                font-size: 18px;
+            }
+
+            .flex_div{
+                display: flex;
+
+                .back_image2{
+                    height: 80px;
+                    width: 80px;
+                    border-radius: 5px;
+                    min-width: 80px;
+                }
+
+                .detail_div{
+                    padding-right: 10px;
+                    .channel_detail2{
+                        display: flex;
+                        align-items: center;
+                        margin-bottom: 10px;
+                        img{
+                            width: 25px;
+                        }
+                        .channel_name{
+                            font-size: 14px;
+                            margin-left: 10px;
+                            margin-right: 10px;
+                        }
+                    }
+                    .head_line2{
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+    }
+}

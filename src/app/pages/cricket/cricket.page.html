@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar>
+    
+    <ion-icon class="back" name="arrow-back-outline" (click)="goBack()"></ion-icon>
+
+    <ion-title>Cricket</ion-title>
+
+    <ion-button slot="end" size="small" fill="clear">
+      <ion-icon name="arrow-redo-outline"></ion-icon>
+    </ion-button>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="main_content_div">
+
+    <div class="slider_div">
+      <ion-label class="head_lbl">Featured Videos</ion-label>
+
+      <ion-slides mode="ios" [options]="slideOpts">
+
+        <ion-slide *ngFor="let item of games" (click)="goToCricketVideo()">
+          <div class="main_div">
+            <div class="image_div bg_image" [style.backgroundImage]="'url( '+ item.img +' )'">
+              <ion-icon name="caret-forward-circle-outline"></ion-icon>
+            </div>
+            <ion-label class="name">{{item.headline}}</ion-label>
+          </div>
+        </ion-slide>
+
+      </ion-slides>
+    </div>
+
+    <div class="lower_div">
+
+      <ion-label class="head_lbl" style="margin-left: 16px;">News</ion-label>
+
+      <div class="news_card" *ngFor="let item of games" (click)="goToNews('Cricket')">
+
+        <div class="flex_div">
+          <div class="detail_div">
+            <ion-label class="head_line2">{{item.headline}}</ion-label>
+
+            <div class="share_div">
+              <ion-label>Cric Tracker </ion-label>
+
+              <ion-button size="small" fill="clear">
+                <ion-icon name="arrow-redo-outline"></ion-icon>
+                Share
+              </ion-button>
+            </div>
+          </div>
+          <div class="back_image2 bg_image" [style.backgroundImage]="'url('+ item.img +')'"></div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</ion-content>

@@ -1,0 +1,120 @@
+<ion-header>
+  <ion-toolbar>
+   <!-- <ion-buttons slot="start">
+     <ion-back-button mode="md"></ion-back-button>
+   </ion-buttons> -->
+
+   <ion-icon class="back" name="arrow-back-outline" (click)="goBack()"></ion-icon>
+
+    <ion-title>Music</ion-title>
+
+    <ion-button slot="end" size="small" fill="clear">
+      <ion-icon name="arrow-redo-outline"></ion-icon>
+    </ion-button>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="main_content_div">
+
+    <video playsinline webkit-playsinline autoplay controls>
+      <source src="assets/imgs/video.mp4" type="video/mp4">
+    </video>
+
+    <div class="detail_div">
+      <ion-label class="head_lbl">Bekhayali</ion-label>
+      
+      <ion-label class="album_detail">Album - <span>Kabir Singh</span></ion-label>
+
+      <ion-label class="album_detail">Artist - <span>Arijit Singh</span></ion-label>
+
+      <ion-label class="album_detail">Duration - 04:20</ion-label>
+
+    </div>
+
+    <div class="autoplay_div">
+        <ion-label>AutoPlay</ion-label>
+        <div class="tog_div">
+          <ion-label>Similar</ion-label>
+          <ion-toggle mode="md"></ion-toggle>
+          <ion-label>Album</ion-label>
+        </div>
+    </div>
+
+    <div class="btn_div">
+      <ion-button expand="block" color="danger">
+        <ion-icon name="caret-forward-outline"></ion-icon>
+        Play
+      </ion-button>
+
+      <ion-button class="icn_btn">
+        <ion-icon name="chevron-down-outline"></ion-icon>
+      </ion-button>
+    </div>
+
+    <div class="line_div"></div>
+
+    <div class="btn_div">
+      
+      <div class="flex_div">
+        <ion-label class="lyrics_lbl">Lyrics</ion-label>
+        <div class="zoom_div">
+          <div class="b1">
+            <ion-label>A+</ion-label>
+          </div>
+          <div class="b1">
+            <ion-label>A-</ion-label>
+          </div>
+        </div>
+      </div>
+
+      <ion-label class="lyrics_detail">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim aliquid voluptas nulla ea!
+        Ad, tempore? Voluptatibus, veniam eveniet architecto velit enim dignissimos iure? Quaerat,
+        reiciendis rerum quia commodi suscipit quod!
+        <!-- Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Minima mollitia neque voluptates sint ratione officiis ex est nesciunt,
+        ea quas modi repellat repudiandae similique at, sit quisquam voluptate cupiditate. Vero.        
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Id commodi odit, maiores inventore 
+        temporibus dicta quos, nostrum, repudiandae error architecto deserunt laborum autem quod? 
+        Consectetur repellat explicabo eos libero qui. -->
+      </ion-label>
+
+      <ion-label class="show_lbl">Show More...</ion-label>
+    </div>
+
+    <div class="line_div"></div>
+
+    <div class="slider_div">
+
+      <ion-label class="similar_lbl">Similar songs</ion-label>
+
+      <div class="slider_class">
+        <ion-slides mode="ios" [options]="slideOpts">
+          <ion-slide *ngFor="let item of (songs | slice : 0 : 7)">
+            <div class="inner_slider">
+              <div class="image_div bg_image" [style.backgroundImage]="'url( '+ item.img +' )'" ></div>
+              <ion-label class="name">{{item.name | slice: 0: 15}}</ion-label>
+            </div>
+          </ion-slide>
+        </ion-slides>
+      </div>
+
+    </div>
+
+    <div class="line_div"></div>
+
+    <div class="album_list">
+      <ion-label class="similar_lbl">More from the album</ion-label>
+
+      <div class="list_div" *ngFor="let item of albumList">
+        <ion-label class="name">{{item.name}}</ion-label>
+        <ion-label class="art">{{item.artist}}</ion-label>
+        <ion-label class="time">{{item.time}}</ion-label>
+      </div>
+
+    </div>
+
+  </div>
+</ion-content>

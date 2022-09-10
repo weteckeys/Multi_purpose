@@ -1,0 +1,7 @@
+{
+  "name": "justDial",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

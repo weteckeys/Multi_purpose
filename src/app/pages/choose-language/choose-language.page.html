@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+   <ion-button (click)="close()" fill="clear">
+    <ion-icon color="dark" name="arrow-back-outline"></ion-icon>
+   </ion-button>
+    <ion-title>Change Language</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="main_content_div">
+
+    <ion-list lines="none">
+      <ion-radio-group name="auto" value="tesla">
+
+        <ion-item>
+          <ion-label>English</ion-label>
+          <ion-radio slot="end" mode="md" value="English"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Hindi</ion-label>
+          <ion-radio slot="end" mode="md" value="Hindi"></ion-radio>
+        </ion-item>
+        
+        <ion-item>
+          <ion-label>Marathi</ion-label>
+          <ion-radio slot="end" mode="md" value="Marathi"></ion-radio>
+        </ion-item>
+
+      </ion-radio-group>
+    </ion-list>
+
+  </div>
+</ion-content>

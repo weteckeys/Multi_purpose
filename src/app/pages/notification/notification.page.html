@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-icon class="back" name="arrow-back-outline" (click)="goBack()"></ion-icon>
+    <ion-title>Notification</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div class="main_content_div">
+
+      <div class="card_div" *ngFor="let item of notification">
+          
+        <div class="back_image bg_image" [style.backgroundImage]="'url( '+ item.img +' )'"></div>
+        <div class="detail">
+          <ion-label class="head">{{item.head}}</ion-label>
+          <ion-label class="sub">{{item.sub | slice : 0 : 50}}</ion-label>
+          <ion-label class="time">3 hours ago</ion-label>
+          <ion-button (click)="openModel()" fill="clear" size="small">
+            <ion-icon name="ellipsis-vertical-sharp"></ion-icon>
+          </ion-button>
+
+        </div>
+
+      </div>
+
+    </div>
+</ion-content>
